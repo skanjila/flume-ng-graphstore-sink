@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Built-By: skanjila
+Build-Jdk: 1.6.0_37
+Specification-Title: Flume NG GraphStore Sink
+Specification-Version: 1.4.0-SNAPSHOT
+Specification-Vendor: Apache Software Foundation
+Implementation-Title: Flume NG GraphStore Sink
+Implementation-Version: 1.4.0-SNAPSHOT
+Implementation-Vendor-Id: org.apache.flume.flume-ng-sinks
+Implementation-Vendor: Apache Software Foundation
+Created-By: Maven Integration for Eclipse
+
