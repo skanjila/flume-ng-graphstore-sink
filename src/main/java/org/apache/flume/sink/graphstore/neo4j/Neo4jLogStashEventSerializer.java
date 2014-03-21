@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.flume.sink.graphstore.neo4j;
+package org.apache.flume.sink.elasticsearch;
 
 import static org.elasticsearch.common.xcontent.XContentFactory.jsonBuilder;
 
@@ -35,7 +35,7 @@ import org.elasticsearch.common.xcontent.XContentBuilder;
 /**
  * Serialize flume events into the same format LogStash uses</p>
  *
- * This can be used to send events to Neo4j and use clients such as
+ * This can be used to send events to ElasticSearch and use clients such as
  * Kabana which expect Logstash formated indexes
  *
  * <pre>
@@ -70,8 +70,8 @@ import org.elasticsearch.common.xcontent.XContentBuilder;
  *      ://github.com/logstash/logstash/wiki/logstash%27s-internal-message-
  *      format
  */
-public class Neo4jLogStashEventSerializer implements
-    Neo4jEventSerializer {
+public class ElasticSearchLogStashEventSerializer implements
+    ElasticSearchEventSerializer {
 
   @Override
   public XContentBuilder getContentBuilder(Event event) throws IOException {

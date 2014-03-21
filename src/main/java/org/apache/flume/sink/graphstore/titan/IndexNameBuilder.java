@@ -18,31 +18,25 @@
  */
 package org.apache.flume.sink.elasticsearch;
 
-import java.io.IOException;
-import java.nio.charset.Charset;
-
 import org.apache.flume.Event;
 import org.apache.flume.conf.Configurable;
 import org.apache.flume.conf.ConfigurableComponent;
-import org.elasticsearch.common.io.BytesStream;
 
-/**
- * Interface for an event serializer which serializes the headers and body of an
- * event to write them to ElasticSearch. This is configurable, so any config
- * params required should be taken through this.
- */
-public interface ElasticSearchEventSerializer extends Configurable,
-    ConfigurableComponent {
-
-  public static final Charset charset = Charset.defaultCharset();
-
+public interface IndexNameBuilder extends Configurable,
+        ConfigurableComponent {
   /**
-   * Return an {@link BytesStream} made up of the serialized flume event
+   * Gets the name of the index to use for an index request
    * @param event
-   *          The flume event to serialize
-   * @return A {@link BytesStream} used to write to ElasticSearch
-   * @throws IOException
-   *           If an error occurs during serialization
+   *          Event which determines index name
+   * @return index name of the form 'indexPrefix-indexDynamicName'
    */
-  abstract BytesStream getContentBuilder(Event event) throws IOException;
+  public String getIndexName(Event event);
+  
+  /**
+   * Gets the prefix of index to use for an index request.
+   * @param event
+   *          Event which determines index name
+   * @return Index prefix name
+   */
+  public String getIndexPrefix(Event event);
 }
