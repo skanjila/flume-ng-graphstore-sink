@@ -1,4 +1,4 @@
-Using ElasticSearch Flume integration
+Building a graphsink with flume
 =====================================
 
 flume-ng-graphstore-sink
